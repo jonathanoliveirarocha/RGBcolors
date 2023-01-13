@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oi</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+            align-items: center;
+            background-color: black;
+            
+        }
+        #atual{
+            background-color: white;
+            border-radius: 20px;
+            width:200px;
+            height:40px;
+            margin-top:300px;
+            
+        }
+    </style>
+    <p>
+        <input id='red' type="button" style="width: 100px;height: 100px;text-align:center;background-color:red;color:aliceblue" value="Vermelho">
+        <input id='green' type="button" style="width: 100px;height: 100px;text-align:center;background-color:green;color:aliceblue" value="Verde">
+        <input id='blue' type="button" style="width: 100px;height: 100px;text-align:center;background-color:blue;color:aliceblue" value="Azul">
+    </p>
+    <input type="button" id="atual" value="rgb(0, 0, 0)">
+    <script>
+        var red = 0
+        var green = 0  
+        var blue = 0 
+        $('#red').click(adicionaVermelho)
+        $('#green').click(adicionaVerde)
+        $('#blue').click(adicionaAzul)
+        function adicionaVermelho(){
+            if (red<255){
+                $('body').css('background', `rgb(${red+=5}, ${green},${blue})`)
+                atualizaValor()
+            }
+        }
+        function adicionaVerde(){
+            if (green<255){
+                $('body').css('background', `rgb(${red},${green+=5},${blue})`)
+                atualizaValor()
+            }
+        }
+        function adicionaAzul(){
+            if (blue<255){
+            $('body').css('background', `rgb(${red},${green},${blue+=5})`)
+            atualizaValor()
+        }
+        }
+        function atualizaValor(){
+            $('#atual').val(`rgb(${red}, ${green},${blue})`)
+        }
+
+    </script>
+
+</body>
+</html>
