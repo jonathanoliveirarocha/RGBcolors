@@ -1,4 +1,4 @@
-# RGBcolors
+# RGB colors
 I do this program to train the use of JQuery. This is an RGB scale color display.
 
 
